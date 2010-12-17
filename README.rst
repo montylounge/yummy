@@ -18,11 +18,17 @@ Installing using PIP and Virtualenv
 -------------------------------------
 
 > mkvirtualenv [directory name] --distribute
+
 > cd [directory name]
+
 > git clone [yummy source]
+
 > cd yummy
+
 > pip install requirements.txt
+
 > mv local_settings.py.template local_settings.py
+
 > ./manage.py migrate
 
 
