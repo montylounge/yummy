@@ -14,8 +14,8 @@ Technical
 Yummy is an extremely standard Django application. Setup a database, configure the settings file, install the requirements, and you are good to go. Eventually we will find a way to make installation like WordPress, the goal of all such webapps, but in such early stages it will be trickier.
 
 
-Installing using PIP and Virtualenv
--------------------------------------
+Installing using PIP and Virtualenv-Wrapper
+--------------------------------------------
 
 > mkvirtualenv [directory name] --distribute
 
@@ -25,7 +25,7 @@ Installing using PIP and Virtualenv
 
 > cd yummy
 
-> pip install requirements.txt
+> pip install -r requirements.txt
 
 > mv local_settings.py.template local_settings.py
 
