@@ -6,18 +6,16 @@ from utils import BasicView
 
 from bookmarks.models import Bookmark
 
-def global_list(request, page_number=None):
+def global_list(request, page_number=None, template_name="bookmarks/global_list.html"):
     bookmarks = Bookmark.objects.filter(private=False)
-    template_name = "bookmarks/global_list.html"
     return bookmark_list(request, bookmarks, page_number=page_number,
         template_name=template_name)
 
-def user_list(request, username, page_number=None):
+def user_list(request, username, page_number=None, template_name="bookmarks/user_list.html"):
     user = get_object_or_404(User, username=username)
     bookmarks = Bookmark.objects.filter(owner=user)
     if user != request.user:
         bookmarks = bookmarks.exclude(private=True)
-    template_name = "bookmarks/user_list.html"
     extra_context = {'user': user}
     return bookmark_list(request, bookmarks, page_number=page_number,
         extra_context=extra_context, template_name=template_name)

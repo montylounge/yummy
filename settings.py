@@ -2,6 +2,7 @@
 import os, sys
 
 # Path
+PROJECT_ROOT = os.path.dirname(__file__)
 APP_ROOT = os.path.join(os.path.dirname(__file__), 'applications')
 UTIL_ROOT = os.path.join(os.path.dirname(__file__), 'utils')
 sys.path.insert(0, APP_ROOT)
@@ -86,9 +87,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'yummy.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, "templates"),
 )
 
 INSTALLED_APPS = (

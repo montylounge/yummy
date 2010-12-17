@@ -1,13 +1,14 @@
 {% extends "base.html" %}
-{% block title %}{{ block.super }} - {% block subtitle %}{% endblock %} - Page {{ page.number }}{% endblock %}
+{% load i18n %}
+{% block title %}{{ block.super }} - {% block subtitle %}{% endblock %} - {% trans "Page" %} {{ page.number }}{% endblock %}
 {% block body %}
-<h2>{% block heading %}{% endblock %} - Page {{ page.number }}</h2>
+<h2>{% block heading %}{% endblock %} - {% trans "Page" %} {{ page.number }}</h2>
 <ul>
     {% for bookmark in page.object_list %}
         <li>
             <h3><a href="{{ bookmark.url }}">{{ bookmark.title }}</a></h3>
             {% if bookmark.private %}
-            <span>PRIVATE</span>
+            <span>{% trans "PRIVATE" %}</span>
             {% endif %}
             <p>{{ bookmark.description }}</p>
             <span>{{ pub_date }}</span>

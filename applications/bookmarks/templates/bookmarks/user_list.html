@@ -1,3 +1,4 @@
 {% extends "bookmarks/list.html" %}
-{% block subtitle %}{{ user.username }}'s Bookmarks{% endblock %}
-{% block heading %}{{ user.username }}'s Bookmarks{% endblock %}
+{% load i18n %}
+{% block subtitle %}{% blocktrans with user.username as username %}{{ username }}'s Bookmarks{% endblocktrans %}{% endblock %}
+{% block heading %}{% blocktrans with user.username as username %}{{ username }}'s Bookmarks{% endblocktrans %}{% endblock %}
